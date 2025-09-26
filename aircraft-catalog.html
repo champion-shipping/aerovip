@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Популярные направления - Аренда частного самолета</title>
+    <meta name="description" content="Рассчитайте стоимость перелета на частном самолете по самым популярным направлениям: Москва, Дубай, Ницца, Мальдивы. Мгновенный поиск доступных джетов.">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #f0f0f0;
+            --accent-color: #D4AF37;
+        }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; background-color: var(--primary-color); color: var(--text-color); }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: #111; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--accent-color); text-decoration: none; }
+        .desktop-nav { display: flex; gap: 40px; }
+        .desktop-nav a { color: var(--text-color); text-decoration: none; font-weight: 500; }
+        .phone { font-size: 1.2rem; font-weight: 500; text-decoration: none; color: var(--text-color); }
+        .section { padding: 80px 5%; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; }
+        .section-title span { color: var(--accent-color); }
+        footer { background-color: #111; padding: 40px 5%; text-align: center; color: #aaa; }
+
+        .routes-page {
+            background-color: var(--secondary-color);
+            color: var(--dark-text);
+        }
+        .routes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+        .route-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            color: white;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 25px;
+            box-sizing: border-box;
+            transition: transform 0.3s;
+            text-decoration: none; /* Убираем подчеркивание у ссылки-карточки */
+        }
+        .route-card:hover {
+            transform: scale(1.03);
+        }
+        .route-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.4s;
+        }
+        .route-card:hover::before {
+            transform: scale(1.1);
+        }
+        .route-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0) 60%);
+        }
+        .route-card-content {
+            position: relative;
+            z-index: 2;
+        }
+        .route-card h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        .route-card p {
+            font-size: 1.1rem;
+            margin: 10px 0 20px 0;
+            color: #ccc;
+        }
+        .cta-button { /* Переименовываем, чтобы не конфликтовать */
+             display: block;
+             text-align: center;
+             background: var(--accent-color);
+             color: var(--primary-color);
+             padding: 15px;
+             border-radius: 8px;
+             text-decoration: none;
+             font-weight: 700;
+        }
+        @media (max-width: 900px) { .desktop-nav, .phone { display: none; } .section-title { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="/" class="logo">AeroVip Charter</a>
+        <nav class="desktop-nav">
+            <a href="aircraft-catalog.html">Популярные маршруты</a>
+            <!-- Ссылка на Empty Legs тоже с вашим ID -->
+            <a href="https://www.villiersjets.com/empty-legs?id=11313" target="_blank">Горящие рейсы (Empty Legs)</a>
+        </nav>
+        <a href="tel:+74951234567" class="phone">+7 (495) 123-45-67</a>
+    </header>
+
+    <main>
+        <section class="section routes-page">
+            <h2 class="section-title">Популярные <span>направления</span></h2>
+            <div class="routes-grid">
+                
+                <!-- Маршрут 1: Москва - Дубай -->
+                <!-- ИЗМЕНЕНИЕ: Вставлена правильная ссылка с вашим ID -->
+                <a href="https://www.villiersjets.com/request?idFrom=Moscow&To=Dubai&id=11313" target="_blank" class="route-card">
+                    <div class="route-card-content">
+                        <h3>Москва → Дубай</h3>
+                        <p>от 35,000 EUR</p>
+                        <span class="cta-button">Подобрать джет</span>
+                    </div>
+                </a>
+                <style>.route-card:nth-child(1)::before { background-image: url('https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=1974&auto=format&fit=crop'); }</style>
+
+                <!-- Маршрут 2: Москва - Ницца -->
+                <!-- ИЗМЕНЕНИЕ: Вставлена правильная ссылка с вашим ID -->
+                <a href="https://www.villiersjets.com/request?idFrom=Moscow&To=Nice&id=11313" target="_blank" class="route-card">
+                    <div class="route-card-content">
+                        <h3>Москва → Ницца</h3>
+                        <p>от 28,000 EUR</p>
+                        <span class="cta-button">Подобрать джет</span>
+                    </div>
+                </a>
+                <style>.route-card:nth-child(2)::before { background-image: url('https://images.unsplash.com/photo-1549925243-950e82b5a1a3?q=80&w=1964&auto=format&fit=crop'); }</style>
+
+                <!-- Маршрут 3: Алматы - Лондон -->
+                <!-- ИЗМЕНЕНИЕ: Вставлена правильная ссылка с вашим ID -->
+                <a href="https://www.villiersjets.com/request?idFrom=Almaty&To=London&id=11313" target="_blank" class="route-card">
+                    <div class="route-card-content">
+                        <h3>Алматы → Лондон</h3>
+                        <p>от 60,000 USD</p>
+                        <span class="cta-button">Подобрать джет</span>
+                    </div>
+                </a>
+                <style>.route-card:nth-child(3)::before { background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop'); }</style>
+                
+                <!-- ДОБАВЬТЕ БОЛЬШЕ МАРШРУТОВ ПО ЭТОМУ ЖЕ ПРИНЦИПУ -->
+                <!-- Например, Москва - Мальдивы -->
+                <a href="https://www.villiersjets.com/request?idFrom=Moscow&To=Maldives&id=11313" target="_blank" class="route-card">
+                    <div class="route-card-content">
+                        <h3>Москва → Мальдивы</h3>
+                        <p>от 90,000 EUR</p>
+                        <span class="cta-button">Подобрать джет</span>
+                    </div>
+                </a>
+                <style>.route-card:nth-child(4)::before { background-image: url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?q=80&w=1975&auto=format&fit=crop'); }</style>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>AeroVip Charter © 2025. Все права защищены.</p>
+        <p>Информация на сайте носит исключительно информационный характер и не является публичной офертой.</p>
+    </footer>
+
+</body>
+</html>
