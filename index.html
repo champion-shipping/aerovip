@@ -29,14 +29,14 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/104400755" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
-    <!-- Premium Styling Final Version -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
         :root {
             --primary-color: #121212;
             --panel-color: #1A1A1A;
-            --accent-color: #D4AF37;
+            /* === COLOR VARIATION: PLATINUM === */
+            --accent-color: #C0C0C0; /* Original: #D4AF37; */
             --text-color: #ffffff;
             --secondary-text-color: #ccc;
             --border-color: rgba(255, 255, 255, 0.1);
@@ -78,18 +78,17 @@
         .hero h1 { font-size: 4rem; margin-bottom: 25px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
         .hero p { font-size: 1.3rem; margin-bottom: 50px; font-weight: 300; max-width: 700px; margin-left: auto; margin-right: auto; color: rgba(255, 255, 255, 0.9); }
         .hero-cta-button { display: inline-block; background-color: var(--accent-color); color: var(--primary-color); padding: 22px 45px; border-radius: 8px; font-size: 1.2rem; font-weight: 700; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: none; }
-        .hero-cta-button:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3); }
+        .hero-cta-button:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(192, 192, 192, 0.3); }
 
         .section { padding: 100px 5%; overflow: hidden; }
         .dark-panel { background-color: var(--panel-color); border-radius: 16px; border: 1px solid var(--border-color); }
 
         .advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .advantage-item { text-align: center; }
-        .advantage-item .icon { display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background-color: rgba(212, 175, 55, 0.1); border-radius: 50%; margin-bottom: 25px; }
+        .advantage-item .icon { display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background-color: rgba(192, 192, 192, 0.1); border-radius: 50%; margin-bottom: 25px; }
         .advantage-item .icon svg { width: 40px; height: 40px; color: var(--accent-color); }
         .advantage-item h4 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color); }
         
-        /* MOBILE TABLE FIX */
         .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .price-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 1rem; min-width: 600px; }
         .price-table th, .price-table td { padding: 20px; text-align: left; border-bottom: 1px solid var(--border-color); }
@@ -105,7 +104,7 @@
         
         .jet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         .jet-card { background-color: var(--panel-color); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
-        .jet-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); border-color: rgba(212, 175, 55, 0.5); }
+        .jet-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); border-color: rgba(192, 192, 192, 0.5); }
         .jet-card img { width: 100%; height: 220px; object-fit: cover; }
         .jet-card-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
         .jet-card h4 { font-size: 1.8rem; color: var(--accent-color); margin-top: 0; margin-bottom: 20px; }
