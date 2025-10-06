@@ -11,7 +11,7 @@
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Aero VIP" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -136,13 +136,40 @@
         footer { background-color: #000; padding: 50px 5%; text-align: center; color: #888; border-top: 1px solid var(--border-color); }
         footer p { color: #888; font-size: 0.9rem; margin: 5px 0; }
         
-        .burger-menu { display: none; background: transparent; border: none; cursor: pointer; padding: 10px; position: fixed; top: 25px; right: 5%; z-index: 1001; }
+        /* === MOBILE MENU FIX (Z-INDEX) === */
+        .burger-menu { 
+            display: none; 
+            background: transparent; 
+            border: none; 
+            cursor: pointer; 
+            padding: 10px; 
+            position: fixed; 
+            top: 25px; 
+            right: 5%; 
+            z-index: 1001; /* Higher than mobile-nav */
+        }
         .burger-bar { display: block; width: 28px; height: 3px; background-color: var(--text-color); margin: 6px 0; transition: 0.4s; }
-        .mobile-nav { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease-in-out; }
+        .mobile-nav { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background-color: rgba(10, 10, 10, 0.95); 
+            backdrop-filter: blur(10px); 
+            z-index: 1000; /* Lower than burger-menu */
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 40px; 
+            opacity: 0; 
+            pointer-events: none; 
+            transition: opacity 0.4s ease-in-out; 
+        }
         .mobile-nav a { color: var(--text-color); text-decoration: none; font-size: 2rem; font-weight: 500; }
         .mobile-nav.active { opacity: 1; pointer-events: all; }
         
-        /* === BURGER -> 'X' ANIMATION (RESTORED) === */
         .burger-menu.active .burger-bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
         .burger-menu.active .burger-bar:nth-child(2) { opacity: 0; }
         .burger-menu.active .burger-bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
@@ -349,6 +376,10 @@
                         <div class="faq-question">Можно ли арендовать самолет на один рейс?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
                         <div class="faq-answer"><p>Конечно. Самый популярный формат — это аренда на один рейс (one-way) или перелет туда-обратно (round trip). Вы платите только за то, что вам нужно.</p></div>
                     </div>
+					    <div class="faq-item">
+                    <div class="faq-question">Можно ли перевозить нестандартный багаж, например, лыжи?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                    <div class="faq-answer"><p>Да, это одно из преимуществ. Главное — заранее сообщить менеджеру о габаритах и весе такого багажа, чтобы убедиться, что он поместится в багажный отсек выбранного самолета.</p></div>
+                </div>
                     <div class="faq-item">
                         <div class="faq-question">Что такое FBO?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
                         <div class="faq-answer"><p>FBO (Fixed-Base Operator) — это по сути частный VIP-терминал в аэропорту, который обслуживает рейсы бизнес-авиации. Именно благодаря FBO обеспечивается быстрое и конфиденциальное прохождение всех предполетных процедур.</p></div>
