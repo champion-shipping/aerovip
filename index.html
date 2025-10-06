@@ -11,7 +11,7 @@
 
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Aero VIP" />
     <link rel="manifest" href="/site.webmanifest" />
@@ -35,7 +35,6 @@
         :root {
             --primary-color: #121212;
             --panel-color: #1A1A1A;
-            /* === Gold Accent Color (Restored) === */
             --accent-color: #D4AF37;
             --text-color: #ffffff;
             --secondary-text-color: #ccc;
@@ -95,7 +94,6 @@
             padding: 20px; 
             text-align: left; 
             border-bottom: 1px solid var(--border-color);
-            /* === CRITICAL TABLE FIX === */
             white-space: nowrap; 
         }
         .price-table thead th { color: var(--text-color); font-weight: 500; font-size: 1rem; border-bottom: 2px solid var(--accent-color); }
@@ -143,6 +141,8 @@
         .mobile-nav { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease-in-out; }
         .mobile-nav a { color: var(--text-color); text-decoration: none; font-size: 2rem; font-weight: 500; }
         .mobile-nav.active { opacity: 1; pointer-events: all; }
+        
+        /* === BURGER -> 'X' ANIMATION (RESTORED) === */
         .burger-menu.active .burger-bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
         .burger-menu.active .burger-bar:nth-child(2) { opacity: 0; }
         .burger-menu.active .burger-bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
