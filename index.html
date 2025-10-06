@@ -29,16 +29,16 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/104400755" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
 
-    <!-- NEW: Premium Styling Section -->
+    <!-- Premium Styling Final Version -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
 
         :root {
-            --primary-color: #121212; /* Глубокий черный */
-            --secondary-color: #f5f5f7; /* Светло-серый, как у Apple */
-            --accent-color: #D4AF37; /* Золотой */
+            --primary-color: #121212;
+            --panel-color: #1A1A1A;
+            --accent-color: #D4AF37;
             --text-color: #ffffff;
-            --dark-text: #333;
+            --secondary-text-color: #ccc;
             --border-color: rgba(255, 255, 255, 0.1);
         }
         
@@ -58,22 +58,21 @@
         }
         .no-scroll { overflow: hidden; }
 
-        /* Typography */
-        h1, h2, h3 { font-weight: 700; line-height: 1.2; }
-        p { line-height: 1.7; color: #ccc; }
-        .section.services p, .section.faq p { color: #555; }
+        h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+        p { line-height: 1.7; color: var(--secondary-text-color); }
+        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 20px; }
+        .section-title span { color: var(--accent-color); }
+        .section-subtitle { text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 70px; color: #aaa; font-weight: 300;}
 
-        /* Header */
         header { display: flex; justify-content: space-between; align-items: center; padding: 25px 5%; position: absolute; width: 90%; z-index: 100; }
         .logo { font-size: 1.8rem; font-weight: 700; color: var(--accent-color); text-decoration: none; letter-spacing: 1px; }
         .desktop-nav { display: flex; gap: 50px; }
-        .desktop-nav a { color: var(--text-color); text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.3s, transform 0.3s; position: relative; }
+        .desktop-nav a { color: var(--text-color); text-decoration: none; font-weight: 500; font-size: 1rem; transition: color 0.3s; position: relative; }
         .desktop-nav a::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 50%; background-color: var(--accent-color); transition: all 0.3s ease-in-out; }
         .desktop-nav a:hover { color: var(--accent-color); }
         .desktop-nav a:hover::after { width: 100%; left: 0; }
 
-        /* Hero Section */
-        .hero { position: relative; height: 100vh; min-height: 750px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: url('ed7d896855ea23ae39bc9b0e0421a884_ce_1350x900x0x0.jpg') no-repeat center center/cover; color: white; }
+        .hero { position: relative; height: 100vh; min-height: 750px; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; background: url('ed7d896855ea23ae39bc9b0e0421a884_ce_1350x900x0x0.jpg') no-repeat center center/cover; }
         .hero::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4)); }
         .hero-content { z-index: 10; max-width: 900px; width: 100%; }
         .hero h1 { font-size: 4rem; margin-bottom: 25px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
@@ -81,63 +80,50 @@
         .hero-cta-button { display: inline-block; background-color: var(--accent-color); color: var(--primary-color); padding: 22px 45px; border-radius: 8px; font-size: 1.2rem; font-weight: 700; text-decoration: none; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.4); border: none; }
         .hero-cta-button:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3); }
 
-        /* General Section Styling */
         .section { padding: 100px 5%; overflow: hidden; }
-        .section-title { text-align: center; font-size: 2.8rem; margin-bottom: 20px; font-weight: 700; }
-        .section-title span { color: var(--accent-color); }
-        .section-subtitle { text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 70px; color: #aaa; font-weight: 300;}
-        .services { background-color: var(--secondary-color); color: var(--dark-text); }
-        .services .section-subtitle, .faq .section-subtitle { color: #555; }
-        
-        /* Advantages Section */
+        .dark-panel { background-color: var(--panel-color); border-radius: 16px; border: 1px solid var(--border-color); }
+
         .advantages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
         .advantage-item { text-align: center; }
         .advantage-item .icon { display: inline-flex; align-items: center; justify-content: center; width: 80px; height: 80px; background-color: rgba(212, 175, 55, 0.1); border-radius: 50%; margin-bottom: 25px; }
         .advantage-item .icon svg { width: 40px; height: 40px; color: var(--accent-color); }
-        .advantage-item h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--primary-color); }
-        .advantage-item p { font-size: 1rem; }
-
-        /* Prices Section */
-        .price-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 1rem; }
-        .price-table th, .price-table td { padding: 20px; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        .price-table thead th { background-color: var(--secondary-color); color: var(--dark-text); font-weight: 500; font-size: 1rem; border-bottom: 2px solid var(--accent-color); }
+        .advantage-item h4 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color); }
+        
+        /* MOBILE TABLE FIX */
+        .table-wrapper { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .price-table { width: 100%; border-collapse: collapse; margin: 40px 0; font-size: 1rem; min-width: 600px; }
+        .price-table th, .price-table td { padding: 20px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        .price-table thead th { color: var(--text-color); font-weight: 500; font-size: 1rem; border-bottom: 2px solid var(--accent-color); }
         .price-table tbody tr { transition: background-color 0.3s; }
-        .price-table tbody tr:hover { background-color: #e9e9ed; }
+        .price-table tbody tr:hover { background-color: rgba(255, 255, 255, 0.03); }
         .price-table td:last-child, .price-table th:last-child { font-weight: 500; }
-
-        /* CTA Block */
-        .cta-block { background-color: #fff; border: 1px solid #e0e0e0; padding: 40px; margin: 60px 0; text-align: center; border-radius: 12px; }
-        .cta-block h3 { margin-top: 0; color: var(--dark-text); font-size: 2rem;}
-        .cta-block p { color: #555; font-size: 1.2rem; margin-bottom: 30px;}
-
-        /* Jet Catalog */
-        .jet-catalog { background-color: var(--primary-color); }
+        .price-table h4 { margin-bottom: 20px; text-align: center; font-size: 1.8rem; }
+        
+        .cta-block { background-color: var(--primary-color); border: 1px solid var(--border-color); padding: 40px; margin: 60px 0; text-align: center; border-radius: 12px; }
+        .cta-block h4 { margin-top: 0; color: var(--text-color); font-size: 2rem;}
+        .cta-block p { font-size: 1.2rem; margin-bottom: 30px;}
+        
         .jet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .jet-card { background-color: #1c1c1c; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
-        .jet-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .jet-card { background-color: var(--panel-color); border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; }
+        .jet-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); border-color: rgba(212, 175, 55, 0.5); }
         .jet-card img { width: 100%; height: 220px; object-fit: cover; }
         .jet-card-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
-        .jet-card h3 { font-size: 1.8rem; color: var(--accent-color); margin-top: 0; margin-bottom: 20px; }
+        .jet-card h4 { font-size: 1.8rem; color: var(--accent-color); margin-top: 0; margin-bottom: 20px; }
         .jet-specs { list-style: none; padding: 0; margin: 20px 0; font-size: 0.9rem; }
         .jet-specs li { margin-bottom: 12px; padding-left: 20px; position: relative; }
         .jet-specs li::before { content: '•'; color: var(--accent-color); position: absolute; left: 0; }
         .jet-card p { flex-grow: 1; margin-bottom: 30px; }
         .cta-button { display: block; text-align: center; background: var(--accent-color); color: var(--primary-color); padding: 15px; border-radius: 8px; text-decoration: none; font-weight: 700; transition: all 0.3s; margin-top: auto; border: none; }
         .cta-button:hover { background-color: #fff; color: var(--primary-color); }
-
-        /* How it works */
-        .how-it-works { background-color: var(--primary-color); }
+        
         .steps-container { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 40px; margin-top: 50px; position: relative; }
         .steps-container::before { content: ''; position: absolute; top: 40px; left: 15%; right: 15%; height: 2px; background: repeating-linear-gradient(90deg, var(--border-color), var(--border-color) 6px, transparent 6px, transparent 12px); z-index: 0;}
         .step { max-width: 280px; text-align: center; position: relative; z-index: 1; }
         .step-number { width: 80px; height: 80px; background: var(--primary-color); border: 2px solid var(--accent-color); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: var(--accent-color); margin-bottom: 25px; }
-        .step h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color); }
-        .step p { font-size: 1rem; }
-
-        /* FAQ */
-        .faq { background-color: var(--secondary-color); color: var(--dark-text); }
+        .step h4 { font-size: 1.5rem; margin-bottom: 15px; color: var(--text-color); }
+        
         .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: white; margin-bottom: 10px; border-radius: 8px; border: 1px solid #e0e0e0; }
+        .faq-item { background-color: var(--primary-color); margin-bottom: 10px; border-radius: 8px; border: 1px solid var(--border-color); }
         .faq-question { padding: 25px; font-size: 1.2rem; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
         .faq-question svg { width: 16px; height: 16px; transition: transform 0.3s ease-out; color: var(--accent-color); }
         .faq-item.active .faq-question svg { transform: rotate(180deg); }
@@ -145,15 +131,9 @@
         .faq-item.active .faq-answer { max-height: 300px; padding: 0 25px 25px; }
         .faq-answer p { margin-top: 0; }
         
-        /* Partner Section */
-        .partner-section { text-align: center; }
-        .partner-section p { max-width: 600px; margin: -20px auto 40px; font-size: 1.1rem; line-height: 1.6; }
-
-        /* Footer */
         footer { background-color: #000; padding: 50px 5%; text-align: center; color: #888; border-top: 1px solid var(--border-color); }
         footer p { color: #888; font-size: 0.9rem; margin: 5px 0; }
         
-        /* Mobile Nav */
         .burger-menu { display: none; background: transparent; border: none; cursor: pointer; padding: 10px; position: fixed; top: 25px; right: 5%; z-index: 1001; }
         .burger-bar { display: block; width: 28px; height: 3px; background-color: var(--text-color); margin: 6px 0; transition: 0.4s; }
         .mobile-nav { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 40px; opacity: 0; pointer-events: none; transition: opacity 0.4s ease-in-out; }
@@ -163,18 +143,9 @@
         .burger-menu.active .burger-bar:nth-child(2) { opacity: 0; }
         .burger-menu.active .burger-bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-        /* Animations */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .fade-in-section { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
 
-        /* Responsive */
         @media (max-width: 900px) {
             .desktop-nav { display: none; }
             .burger-menu { display: block; }
@@ -185,9 +156,7 @@
             .section-subtitle { font-size: 1rem; }
             .steps-container::before { display: none; }
             .steps-container { flex-direction: column; align-items: center; }
-            .price-table th, .price-table td { font-size: 0.9rem; padding: 12px 8px;}
         }
-
     </style>
 </head>
 <body>
@@ -221,76 +190,84 @@
             </div>
         </section>
 
-        <section class="section services fade-in-section">
-            <h2 class="section-title">Ключевые преимущества <span>бизнес-авиации</span></h2>
-            <p class="section-subtitle">Частный джет отличается от бизнес-класса регулярного рейса принципиально разным уровнем свободы и сервиса.</p>
-            <div class="advantages-grid">
-                <div class="advantage-item">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                    <h3>Экономия времени</h3>
-                    <p>Прибытие в VIP-терминал за 15-30 минут до вылета, без очередей. Самолет вылетает строго по вашему графику.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg></div>
-                    <h3>Полная конфиденциальность</h3>
-                    <p>На борту находитесь только вы и ваши гости. Информация о вас и маршруте строго конфиденциальна.</p>
-                </div>
-                <div class="advantage-item">
-                     <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg></div>
-                    <h3>Гибкость маршрутов</h3>
-                    <p>Доступ к тысячам аэропортов по всему миру, недоступных для крупных лайнеров. Вы можете составить любой прямой маршрут.</p>
-                </div>
-                <div class="advantage-item">
-                    <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg></div>
-                    <h3>Непревзойденный комфорт</h3>
-                    <p>Ваш личный офис или зона отдыха. Закажите блюда из любимого ресторана, летите с животными в салоне.</p>
+        <section class="section fade-in-section">
+            <div class="dark-panel" style="padding: 60px 5%;">
+                <h2 class="section-title">Ключевые преимущества <span>бизнес-авиации</span></h2>
+                <p class="section-subtitle">Частный джет отличается от бизнес-класса регулярного рейса принципиально разным уровнем свободы и сервиса.</p>
+                <div class="advantages-grid">
+                    <div class="advantage-item">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                        <h4>Экономия времени</h4>
+                        <p>Прибытие в VIP-терминал за 15-30 минут до вылета, без очередей. Самолет вылетает строго по вашему графику.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg></div>
+                        <h4>Полная конфиденциальность</h4>
+                        <p>На борту находитесь только вы и ваши гости. Информация о вас и маршруте строго конфиденциальна.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" /></svg></div>
+                        <h4>Гибкость маршрутов</h4>
+                        <p>Доступ к тысячам аэропортов по всему миру, недоступных для крупных лайнеров. Вы можете составить любой прямой маршрут.</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" /></svg></div>
+                        <h4>Непревзойденный комфорт</h4>
+                        <p>Ваш личный офис или зона отдыха. Закажите блюда из любимого ресторана, летите с животными в салоне.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="prices" class="section services fade-in-section">
-            <h2 class="section-title">Стоимость аренды самолета в Москве: <span>Цены 2025</span></h2>
-            <p class="section-subtitle">Один из первых вопросов — «сколько стоит аренда самолета». Для вашего удобства мы подготовили таблицы с ценами за летный час и стоимостью популярных маршрутов.</p>
-            
-            <h3>Ориентировочная стоимость 1 летного часа</h3>
-            <table class="price-table">
-                <thead><tr><th>Класс самолета</th><th>Популярные модели</th><th>Цена за час полета</th></tr></thead>
-                <tbody>
-                    <tr><td>Легкие джеты</td><td>Citation CJ3, Phenom 300</td><td>от 280 000 ₽</td></tr>
-                    <tr><td>Средние джеты</td><td>Hawker 850, Challenger 350</td><td>от 420 000 ₽</td></tr>
-                    <tr><td>Тяжелые джеты</td><td>Legacy 650, Global 5000</td><td>от 580 000 ₽</td></tr>
-                    <tr><td>Дальнемагистральные</td><td>Gulfstream G550, G650</td><td>от 750 000 ₽</td></tr>
-                </tbody>
-            </table>
+        <section id="prices" class="section fade-in-section">
+            <div class="dark-panel" style="padding: 60px 5%;">
+                <h2 class="section-title">Стоимость аренды самолета в Москве: <span>Цены 2025</span></h2>
+                <p class="section-subtitle">Один из первых вопросов — «сколько стоит аренда самолета». Для вашего удобства мы подготовили таблицы с ценами за летный час и стоимостью популярных маршрутов.</p>
+                
+                <h4 style="text-align: center; font-size: 1.8rem; margin-bottom: 20px;">Ориентировочная стоимость 1 летного часа</h4>
+                <div class="table-wrapper">
+                    <table class="price-table">
+                        <thead><tr><th>Класс самолета</th><th>Популярные модели</th><th>Цена за час полета</th></tr></thead>
+                        <tbody>
+                            <tr><td>Легкие джеты</td><td>Citation CJ3, Phenom 300</td><td>от 280 000 ₽</td></tr>
+                            <tr><td>Средние джеты</td><td>Hawker 850, Challenger 350</td><td>от 420 000 ₽</td></tr>
+                            <tr><td>Тяжелые джеты</td><td>Legacy 650, Global 5000</td><td>от 580 000 ₽</td></tr>
+                            <tr><td>Дальнемагистральные</td><td>Gulfstream G550, G650</td><td>от 750 000 ₽</td></tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <h3>Примерная стоимость популярных рейсов (из Москвы)</h3>
-            <table class="price-table">
-                <thead><tr><th>Маршрут</th><th>Тип самолета</th><th>Примерная стоимость</th></tr></thead>
-                <tbody>
-                    <tr><td>Санкт-Петербург</td><td>Citation CJ3</td><td>от 375 000 ₽</td></tr>
-                    <tr><td>Сочи</td><td>Hawker 850</td><td>от 840 000 ₽</td></tr>
-                    <tr><td>Екатеринбург</td><td>Challenger 350</td><td>от 1 080 000 ₽</td></tr>
-                    <tr><td>Лондон</td><td>Global 5000</td><td>от 2 550 000 ₽</td></tr>
-                    <tr><td>Дубай</td><td>Global 6000</td><td>от 4 510 000 ₽</td></tr>
-                    <tr><td>Пекин</td><td>Gulfstream G650</td><td>от 6 650 000 ₽</td></tr>
-                </tbody>
-            </table>
+                <h4 style="text-align: center; font-size: 1.8rem; margin-top: 50px; margin-bottom: 20px;">Примерная стоимость популярных рейсов (из Москвы)</h4>
+                <div class="table-wrapper">
+                    <table class="price-table">
+                        <thead><tr><th>Маршрут</th><th>Тип самолета</th><th>Примерная стоимость</th></tr></thead>
+                        <tbody>
+                            <tr><td>Санкт-Петербург</td><td>Citation CJ3</td><td>от 375 000 ₽</td></tr>
+                            <tr><td>Сочи</td><td>Hawker 850</td><td>от 840 000 ₽</td></tr>
+                            <tr><td>Екатеринбург</td><td>Challenger 350</td><td>от 1 080 000 ₽</td></tr>
+                            <tr><td>Лондон</td><td>Global 5000</td><td>от 2 550 000 ₽</td></tr>
+                            <tr><td>Дубай</td><td>Global 6000</td><td>от 4 510 000 ₽</td></tr>
+                            <tr><td>Пекин</td><td>Gulfstream G650</td><td>от 6 650 000 ₽</td></tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <div class="cta-block">
-                <h3>Узнайте точную стоимость вашего перелета</h3>
-                <p>Рассчитайте цену и посмотрите доступные самолеты на ваши даты.</p>
-                <a href="https://www.villiersjets.com/?id=11313" target="_blank" rel="noopener nofollow" class="hero-cta-button">Рассчитать стоимость онлайн</a>
+                <div class="cta-block">
+                    <h4>Узнайте точную стоимость вашего перелета</h4>
+                    <p>Рассчитайте цену и посмотрите доступные самолеты на ваши даты.</p>
+                    <a href="https://www.villiersjets.com/?id=11313" target="_blank" rel="noopener nofollow" class="hero-cta-button">Рассчитать стоимость онлайн</a>
+                </div>
             </div>
         </section>
 
-        <section id="jets" class="section jet-catalog fade-in-section">
+        <section id="jets" class="section fade-in-section">
             <h2 class="section-title">Гид по классам и моделям <span>бизнес-джетов</span></h2>
             <p class="section-subtitle">Выбор джета напрямую влияет на комфорт и стоимость. Некоторые модели пользуются особым спросом благодаря своей надежности и комфорту.</p>
             <div class="jet-grid">
                 <article class="jet-card">
                     <img src="citationxls.jpg" alt="Cessna Citation XLS+">
                     <div class="jet-card-content">
-                        <h3>Cessna Citation XLS+</h3>
+                        <h4>Cessna Citation XLS+</h4>
                         <ul class="jet-specs">
                             <li><strong>Класс:</strong> Легкий (Light Jet)</li>
                             <li><strong>Пассажиры:</strong> до 8</li>
@@ -303,7 +280,7 @@
                 <article class="jet-card">
                     <img src="world_wide_lux_fleet_bombardier_challenger-350_1.jpg" alt="Bombardier Challenger 350">
                     <div class="jet-card-content">
-                        <h3>Bombardier Challenger 350</h3>
+                        <h4>Bombardier Challenger 350</h4>
                         <ul class="jet-specs">
                             <li><strong>Класс:</strong> Средний (Mid-size Jet)</li>
                             <li><strong>Пассажиры:</strong> до 10</li>
@@ -316,7 +293,7 @@
                 <article class="jet-card">
                     <img src="Gulfstream_G650ER_Aerial_5_0.jpg" alt="Gulfstream G650ER">
                     <div class="jet-card-content">
-                        <h3>Gulfstream G650ER</h3>
+                        <h4>Gulfstream G650ER</h4>
                         <ul class="jet-specs">
                             <li><strong>Класс:</strong> Дальнемагистральный</li>
                             <li><strong>Пассажиры:</strong> до 16</li>
@@ -329,59 +306,59 @@
             </div>
         </section>
 
-        <section class="section how-it-works fade-in-section">
+        <section class="section fade-in-section">
              <h2 class="section-title">Как заказать самолет: <span>всего 3 шага</span></h2>
              <p class="section-subtitle">Заказать частный рейс проще, чем кажется. Весь процесс занимает минимум времени. Срочно нужно улететь? Мы можем организовать вылет даже за 3-4 часа.</p>
              <div class="steps-container">
                  <div class="step">
                      <div class="step-number">1</div>
-                     <h3>Отправьте запрос</h3>
+                     <h4>Отправьте запрос</h4>
                      <p>Укажите маршрут, дату и число пассажиров в онлайн-форме.</p>
                  </div>
                  <div class="step">
                      <div class="step-number">2</div>
-                     <h3>Выберите самолет</h3>
+                     <h4>Выберите самолет</h4>
                      <p>Мы пришлем предложение с доступными вариантами. Выберите подходящий.</p>
                  </div>
                  <div class="step">
                      <div class="step-number">3</div>
-                     <h3>Наслаждайтесь полетом</h3>
+                     <h4>Наслаждайтесь полетом</h4>
                      <p>После оплаты ваш личный самолет будет готов к вылету в назначенное время.</p>
                  </div>
              </div>
         </section>
 
-        <section id="faq" class="section faq fade-in-section">
-             <h2 class="section-title">Ответы на <span>популярные вопросы</span></h2>
-             <p class="section-subtitle">Здесь мы собрали ответы на самые частые вопросы о стоимости, условиях и возможностях бизнес-авиации.</p>
-             <div class="faq-container">
-                 <div class="faq-item">
-                     <div class="faq-question">Сколько стоит аренда частного самолета в Москве?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
-                     <div class="faq-answer"><p>Стоимость начинается примерно от 375 000 рублей за короткий рейс (например, в Санкт-Петербург) и доходит до 6 500 000+ рублей за дальние перелеты (например, в Пекин). Точная цена зависит от типа джета, маршрута и других факторов.</p></div>
-                 </div>
-                 <div class="faq-item">
-                     <div class="faq-question">Входит ли работа экипажа в цену аренды?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
-                     <div class="faq-answer"><p>Да, аренда самолета всегда подразумевает услуги высококвалифицированного экипажа (двух пилотов и, на большинстве рейсов, бортпроводника). Это включено в итоговую стоимость.</p></div>
-                 </div>
-                  <div class="faq-item">
-                     <div class="faq-question">Можно ли арендовать самолет на один рейс?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
-                     <div class="faq-answer"><p>Конечно. Самый популярный формат — это аренда на один рейс (one-way) или перелет туда-обратно (round trip). Вы платите только за то, что вам нужно.</p></div>
-                 </div>
-                 <div class="faq-item">
-                    <div class="faq-question">Можно ли перевозить нестандартный багаж, например, лыжи?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
-                    <div class="faq-answer"><p>Да, это одно из преимуществ. Главное — заранее сообщить менеджеру о габаритах и весе такого багажа, чтобы убедиться, что он поместится в багажный отсек выбранного самолета.</p></div>
+        <section id="faq" class="section fade-in-section">
+            <div class="dark-panel" style="padding: 60px 5%;">
+                <h3 class="section-title">Ответы на <span>популярные вопросы</span></h3>
+                <p class="section-subtitle">Здесь мы собрали ответы на самые частые вопросы о стоимости, условиях и возможностях бизнес-авиации.</p>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">Сколько стоит аренда частного самолета в Москве?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                        <div class="faq-answer"><p>Стоимость начинается примерно от 375 000 рублей за короткий рейс (например, в Санкт-Петербург) и доходит до 6 500 000+ рублей за дальние перелеты (например, в Пекин). Точная цена зависит от типа джета, маршрута и других факторов.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Входит ли работа экипажа в цену аренды?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                        <div class="faq-answer"><p>Да, аренда самолета всегда подразумевает услуги высококвалифицированного экипажа (двух пилотов и, на большинстве рейсов, бортпроводника). Это включено в итоговую стоимость.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Можно ли арендовать самолет на один рейс?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                        <div class="faq-answer"><p>Конечно. Самый популярный формат — это аренда на один рейс (one-way) или перелет туда-обратно (round trip). Вы платите только за то, что вам нужно.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Что такое FBO?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
+                        <div class="faq-answer"><p>FBO (Fixed-Base Operator) — это по сути частный VIP-терминал в аэропорту, который обслуживает рейсы бизнес-авиации. Именно благодаря FBO обеспечивается быстрое и конфиденциальное прохождение всех предполетных процедур.</p></div>
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Что такое FBO?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg></div>
-                    <div class="faq-answer"><p>FBO (Fixed-Base Operator) — это по сути частный VIP-терминал в аэропорту, который обслуживает рейсы бизнес-авиации. Именно благодаря FBO обеспечивается быстрое и конфиденциальное прохождение всех предполетных процедур.</p></div>
-                </div>
-             </div>
+            </div>
         </section>
 
-        <section class="section partner-section fade-in-section">
-            <h2 class="section-title">Хотите <span>зарабатывать с нами?</span></h2>
-            <p class="section-subtitle" style="color: #ccc;">Присоединяйтесь к нашей партнерской программе и получайте вознаграждение за каждый рейс, забронированный по вашей рекомендации.</p>
-            <a href="https://www.villiersjets.com/affiliates?id=11313" target="_blank" class="hero-cta-button">Стать партнером</a>
+        <section class="section fade-in-section">
+            <h3 class="section-title">Хотите <span>зарабатывать с нами?</span></h3>
+            <p class="section-subtitle">Присоединяйтесь к нашей партнерской программе и получайте вознаграждение за каждый рейс, забронированный по вашей рекомендации.</p>
+            <div style="text-align: center;">
+                <a href="https://www.villiersjets.com/affiliates?id=11313" target="_blank" class="hero-cta-button">Стать партнером</a>
+            </div>
         </section>
     </main>
 
@@ -393,22 +370,13 @@
     <!-- Scripts -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // FAQ Accordion
             const faqItems = document.querySelectorAll('.faq-item');
             faqItems.forEach(item => {
                 item.addEventListener('click', () => {
-                    const isActive = item.classList.contains('active');
-                    // Необязательно закрывать остальные при открытии одного
-                    // faqItems.forEach(i => i.classList.remove('active'));
-                    if (!isActive) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
+                    item.classList.toggle('active');
                 });
             });
 
-            // Mobile Navigation
             const burgerMenu = document.getElementById('burger-menu');
             const mobileNav = document.getElementById('mobile-nav');
             const body = document.body;
@@ -426,7 +394,6 @@
                 });
             });
 
-            // NEW: Intersection Observer for animations
             const sections = document.querySelectorAll('.fade-in-section');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -435,9 +402,7 @@
                         observer.unobserve(entry.target);
                     }
                 });
-            }, {
-                threshold: 0.1
-            });
+            }, { threshold: 0.1 });
             sections.forEach(section => {
                 observer.observe(section);
             });
